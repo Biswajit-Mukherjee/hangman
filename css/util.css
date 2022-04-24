@@ -2,8 +2,7 @@
     width: 100%;
     font-size: 1.35rem;
     font-weight: 500;
-    border: 1px solid var(--reset-btn-bg);
-    background-color: var(--reset-btn-bg);
+    background-color: var(--cta-bg);
     color: var(--bg-prim);
     margin-top: auto;
     padding: .8rem 1.6rem;
@@ -16,13 +15,7 @@
 
 .reset-btn:hover,
 .reset-btn:active {
-    background-color: var(--bg-prim);
-    color: var(--reset-btn-bg);
-}
-
-.reset-btn:focus {
-    outline: 3px solid var(--reset-btn-bg);
-    outline-offset: 3px;
+    background-color: var(--acc-bg);
 }
 
 .flex--x {
@@ -45,5 +38,9 @@
     font-weight: 700;
     letter-spacing: -.8px;
     word-spacing: 3.2px;
-    color: var(--reset-btn-bg);
+    color: var(--acc-bg);
+}
+
+.success {
+    color: var(--success);
 }
