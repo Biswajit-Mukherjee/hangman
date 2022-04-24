@@ -1,6 +1,6 @@
 .reset-btn {
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-weight: 500;
     border: 1px solid var(--reset-btn-bg);
     background-color: var(--reset-btn-bg);
@@ -44,4 +44,6 @@
     font-family: var(--ff-acc);
     font-weight: 700;
     letter-spacing: -.75px;
+    word-spacing: 2.5px;
+    color: var(--reset-btn-bg);
 }

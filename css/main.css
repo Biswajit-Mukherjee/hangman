@@ -18,7 +18,7 @@
 .header .logo .header__title {
     font-size: 2rem;
     height: 100%;
-    padding-inline: .25rem;
+    padding: 0 .25rem;
 }
 
 /* Main area styling */
