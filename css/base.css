@@ -9,7 +9,7 @@
     --hgmn-elevation: 0 1px 3px 0 rgba(var(--box-shadow-rgb), .3), 0 2px 6px 2px rgba(var(--box-shadow-rgb), .15);
     --acc-bg: hsl(205, 87%, 20%);
     --cta-bg: hsl(205, 87%, 40%);
-    --success: hsl(134, 70%, 65%);
+    --success: hsl(134, 62%, 65%);
     --game-max-width: 640px;
     --game-min-height: 264px;
 }
