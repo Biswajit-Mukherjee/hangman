@@ -1,0 +1,65 @@
+/* Header styling */
+.header,
+.footer {
+    background-color: var(--bg-prim);
+    padding: 1.25rem;
+}
+
+.header {
+    justify-content: space-between;
+}
+
+.header__title {
+    font-size: 2rem;
+}
+
+/* Main area styling */
+.main {
+    width: 100%;
+    display: flex;
+    flex: 1;
+}
+
+/* Game section styling */
+.main .game {
+    width: 96%;
+    max-width: 640px;
+    margin: auto;
+    padding: 1.25rem;
+    box-shadow: var(--hgmn-elevation);
+    border-radius: .5rem;
+    background-color: var(--bg-prim);
+    overflow: hidden;
+}
+
+.main .game .game__title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.main .game .game__content {
+    padding: 1.25rem 0;
+    text-align: center;
+}
+
+.main .game .game__content .content__word {
+    font-size: 1.5rem;
+}
+
+.main .game .game__content .content__status {
+    padding: .75rem 0 0;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+}
+
+/* Mobile styling */
+@media (max-width: 840px) {
+    .header,
+    .footer {
+        padding-inline: .55rem;
+    }
+}

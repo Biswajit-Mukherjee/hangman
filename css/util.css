@@ -1,0 +1,47 @@
+.reset-btn {
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border: 1px solid var(--reset-btn-bg);
+    background-color: var(--reset-btn-bg);
+    color: var(--bg-prim);
+    margin-top: 2rem;
+    padding: .8rem 1.6rem;
+    border-radius: 100vh;
+}
+
+.reset-btn .btn-text {
+    padding: 0 .25rem;
+}
+
+.reset-btn:hover,
+.reset-btn:active {
+    background-color: var(--bg-prim);
+    color: var(--reset-btn-bg);
+}
+
+.reset-btn:focus {
+    outline: 3px solid var(--reset-btn-bg);
+    outline-offset: 3px;
+}
+
+.flex--x {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex--y {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.accent--bold {
+    font-family: var(--ff-acc);
+    font-weight: 700;
+    letter-spacing: -.75px;
+}
