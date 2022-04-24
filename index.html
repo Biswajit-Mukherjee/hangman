@@ -24,12 +24,24 @@
 </head>
 
 <body class="flex--y">
+    <div class="overlay" id="overlay"></div>
+
     <header class="header flex--x">
         <div class="logo flex--x">
             <div class="icon-wrapper"><img src="./img/maze.ico" alt="logo" class="header__icon"></div>
             <h1 class="header__title accent--bold">Hangman</h1>
         </div>
-        <div class="header__settings"></div>
+        <button class="btn header__actions-btn" title="More actions" id="header-actions-btn">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+
+            <nav class="header__actions-menu" id="header-actions-menu">
+                <ul class="header__actions">
+                    <li class="header__action" id="about">About app</li>
+                    <li class="header__action">How to play?</li>
+                    <li class="header__action">Choose difficulty level</li>
+                </ul>
+            </nav>
+        </button>
     </header>
 
     <main class="main">

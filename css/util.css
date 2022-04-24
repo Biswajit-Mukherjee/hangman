@@ -11,7 +11,7 @@
 }
 
 .reset-btn .btn-text {
-    padding: 0 .25rem;
+    padding: 0 .5rem;
 }
 
 .reset-btn:hover,
@@ -43,7 +43,7 @@
 .accent--bold {
     font-family: var(--ff-acc);
     font-weight: 700;
-    letter-spacing: -.75px;
-    word-spacing: 2.5px;
+    letter-spacing: -.8px;
+    word-spacing: 3.2px;
     color: var(--reset-btn-bg);
 }

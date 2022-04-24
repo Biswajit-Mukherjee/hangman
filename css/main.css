@@ -1,3 +1,20 @@
+/* Overlay styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
 /* Header styling */
 .header,
 .footer {
@@ -22,6 +39,65 @@
     padding: 0 .25rem;
 }
 
+.header .header__actions-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    display: flex;
+    outline: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    position: relative;
+}
+
+.header .header__actions-btn:hover,
+.header .header__actions-btn:active {
+    background-color: var(--bg-sec);
+}
+
+.header .header__actions-btn i {
+    height: fit-content;
+    font-size: calc(var(--logo-size)/2);
+    margin: auto;
+}
+
+/* Header actions menu styling */
+.header__actions-menu {
+    width: fit-content;
+    background-color: var(--bg-prim);
+    box-shadow: var(--hgmn-elevation);
+    border-radius: .25rem;
+    position: fixed;
+    top: 2%;
+    right: 1%;
+    font-size: 1rem;
+    text-align: left;
+    display: none;
+    z-index: 10;
+}
+
+.header__actions-menu.show {
+    display: block;
+}
+
+.header__actions-menu .header__actions {
+    padding: .5rem 0;
+    background-color: transparent;
+    color: inherit;
+}
+
+.header__actions-menu .header__actions .header__action {
+    padding: .75rem 1.5rem;
+}
+
+.header__actions-menu .header__actions .header__action:hover,
+.header__actions-menu .header__actions .header__action:active {
+    background-color: var(--bg-sec);
+}
+
 /* Main area styling */
 .main {
     width: 100%;
@@ -31,9 +107,9 @@
 
 /* Game section styling */
 .main .game {
-    width: 96%;
-    max-width: 640px;
-    min-height: 264px;
+    width: 94%;
+    max-width: var(--game-max-width);
+    min-height: var(--game-min-height);
     margin: auto;
     padding: 1.25rem;
     box-shadow: var(--hgmn-elevation);
@@ -88,5 +164,37 @@
     .header,
     .footer {
         padding-inline: .55rem;
+    }
+}
+
+@media (max-width: 540px) {
+    :root {
+        --logo-size: 2rem;
+    }
+
+    .header .logo .header__title {
+        font-size: 1.5rem;
+    }
+
+    .header__actions-menu {
+        right: 2%;
+    }
+
+    .reset-btn {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 380px) {
+    :root {
+        --logo-size: 1.5rem;
+    }
+
+    .header .logo .header__title {
+        font-size: 1.25rem;
+    }
+
+    .reset-btn {
+        font-size: 1.15rem;
     }
 }
