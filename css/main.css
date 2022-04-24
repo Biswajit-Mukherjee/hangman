@@ -32,6 +32,7 @@
 .main .game {
     width: 96%;
     max-width: 640px;
+    min-height: 264px;
     margin: auto;
     padding: 1.25rem;
     box-shadow: var(--hgmn-elevation);
@@ -40,22 +41,39 @@
     overflow: hidden;
 }
 
-.main .game .game__title {
+.main .game .container {
+    flex: 1;
+}
+
+.main .game .container .game__title {
     font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
 }
 
-.main .game .game__content {
-    padding: 1.25rem 0;
+.main .game .container .game__content {
     text-align: center;
+    flex: 1;
+    justify-content: space-between;
 }
 
-.main .game .game__content .content__word {
+.main .game .container .game__content > * {
+    flex: 1;
+}
+
+.main .game .container .game__content .puzzle-wrapper {
+    padding: 1.25rem 0;
+}
+
+.main .game .container .game__content .puzzle-wrapper > * {
+    margin: auto;
+}
+
+.main .game .container .game__content .puzzle-wrapper .content__word {
     font-size: 1.5rem;
 }
 
-.main .game .game__content .content__status {
+.main .game .container .game__content .puzzle-wrapper .content__status {
     padding: .75rem 0 0;
 }
 

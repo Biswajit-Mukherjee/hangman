@@ -33,15 +33,22 @@
     </header>
 
     <main class="main">
-        <section class="game">
-            <h3 class="game__title">Try to guess the word below. Best of luck!</h3>
-            <div class="game__content">
-                <!-- <h5 class="content__word accent--bold" id="puzzle">Car Parts</h5> -->
-                <h5 class="content__word accent--bold" id="puzzle">*** *****</h5>
-                <p class="content__status" id="status">Guesses left: 5</p>
-                <button class="btn reset-btn" id="reset">
-                    <i class="fa-solid fa-rotate-right"></i><span class="btn-text">Start over</span>
-                </button>
+        <section class="game flex--y">
+            <div class="container flex--y">
+                <h3 class="game__title">Try to guess the word below. Best of luck!</h3>
+                <div class="game__content flex--y">
+                    <div class="puzzle-wrapper flex--y">
+                        <!-- <h5 class="content__word accent--bold" id="puzzle">Car Parts</h5> -->
+                        <h5 class="content__word accent--bold" id="puzzle">*** *****</h5>
+                        <p class="content__status" id="status">Guesses left: 5</p>
+                    </div>
+
+                    <div class="cta-wrapper flex--y">
+                        <button class="btn reset-btn" id="reset">
+                            <i class="fa-solid fa-rotate-right"></i><span class="btn-text">Start over</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
