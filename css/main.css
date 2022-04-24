@@ -9,8 +9,16 @@
     justify-content: space-between;
 }
 
-.header__title {
+.header .logo .icon-wrapper {
+    width: var(--logo-size);
+    height: var(--logo-size);
+    vertical-align: middle;
+}
+
+.header .logo .header__title {
     font-size: 2rem;
+    height: 100%;
+    padding-inline: .25rem;
 }
 
 /* Main area styling */
