@@ -11,16 +11,16 @@ class Hangman {
         }   else if (this.status === 'Failed') {
             return 'Better luck next time!'
         }   else {
-            return 'Try to guess the word below. Best of luck!'
+            return 'Try to guess the puzzle below. Best of luck!'
         }
     }
     setStatusMessage() {
         if (this.status === 'Finished') {
-            return 'Well done! You guessed the word'
+            return 'Well done! You guessed it'
         }   else if (this.status === 'Playing') {
             return `Guesses left: ${this.remainingGuesses}`
         }   else {
-            return `Nice try! The word was "${capitalizeFirstLetterOfEachWord(this.word.join(''))}"`
+            return `Nice try! The puzzle was "${capitalizeFirstLetterOfEachWord(this.word.join(''))}"`
         }
     }
     calculateStatus() {
