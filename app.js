@@ -1,4 +1,7 @@
 const overlay = document.querySelector('#overlay')
+const modalCloseButton = document.querySelector('.modal-close')
+const aboutAppModal = document.querySelector('#about-app-modal')
+const aboutAppOption = document.querySelector('#about-app')
 const headerActionsButton = document.querySelector('#header-actions-btn')
 const headerActionsMenu = document.querySelector('#header-actions-menu')
 const gameTitle = document.querySelector('#game-title')
@@ -25,4 +28,20 @@ startGame(guesses, difficultyLevel)
 
 resetButton.addEventListener('click', () => {
     startGame(guesses, difficultyLevel)
+})
+
+modalCloseButton.addEventListener('click', () => {
+    const openModals = document.querySelectorAll('.modal.show')
+    openModals.forEach((modal) => {
+        removeClassFromElement(modal, 'show')
+    })
+    removeClassFromElement(overlay, 'darken')
+    removeClassFromElement(overlay, 'show')
+})
+
+aboutAppOption.addEventListener('click', () => {
+    removeClassFromElement(headerActionsMenu, 'show')
+    showElement(overlay)
+    addClassToElement(overlay, 'darken')
+    showElement(aboutAppModal)
 })

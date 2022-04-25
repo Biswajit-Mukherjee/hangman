@@ -1,3 +1,97 @@
+/* Overlay styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.overlay.darken {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/* Modals and popups styling */
+.modal {
+    width: 90%;
+    max-width: var(--about-modal-max-width);
+    min-height: var(--about-modal-min-height);
+    background-color: var(--bg-prim);
+    box-shadow: var(--hgmn-elevation);
+    border-radius: .5rem;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform .3s ease-in-out;
+    z-index: 100;
+}
+
+.modal.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal > * {
+    padding: 1rem;
+}
+
+.modal .modal__head {
+    padding-block: .5rem;
+    flex-direction: row-reverse;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+/* Generic modal close button styling */
+.modal-close {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    background-color: #ededed;
+    border-radius: 50%;
+}
+
+.modal-close i {
+    margin: auto;
+}
+
+.modal .modal__body {
+    width: 100%;
+    flex: 1;
+}
+
+.modal .modal__body.about-app {
+    text-align: center;
+}
+
+.modal .modal__body.about-app .about-app__logo {
+    margin: auto;
+}
+
+.modal .modal__body.about-app .about-app__desc {
+    font-size: 90%;
+}
+
+.modal .modal__body.about-app .about-app__desc .desc__text {
+    padding: .5rem 0;
+}
+
+.modal .modal__body.about-app .about-app__desc .desc__version {
+    padding-top: 1.25rem;
+    font-size: 85%;
+}
+
 .reset-btn {
     width: 100%;
     font-size: 1.35rem;

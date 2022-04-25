@@ -13,6 +13,8 @@
     --success: hsl(155, 100%, 35%);
     --game-max-width: 640px;
     --game-min-height: 264px;
+    --about-modal-max-width: 680px;
+    --about-modal-min-height: 240px;
 }
 
 *, *::before, *::after {
