@@ -2,11 +2,11 @@
     width: 100%;
     font-size: 1.35rem;
     font-weight: 500;
+    border-radius: 100vh;
     background-color: var(--cta-bg);
     color: var(--bg-prim);
     margin-top: auto;
     padding: .8rem 1.6rem;
-    border-radius: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
