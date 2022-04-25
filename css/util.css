@@ -48,8 +48,14 @@
 
 .modal .modal__head {
     padding-block: .5rem;
-    flex-direction: row-reverse;
+    justify-content: space-between;
     border-bottom: 1px solid #d8d8d8;
+}
+
+.modal .modal__head .modal-title {
+    color: var(--acc-bg);
+    font-size: 105%;
+    font-weight: 500;
 }
 
 /* Generic modal close button styling */
@@ -90,6 +96,7 @@
 .modal .modal__body.about-app .about-app__desc .desc__version {
     padding-top: 1.25rem;
     font-size: 85%;
+    font-weight: 600;
 }
 
 .reset-btn {
