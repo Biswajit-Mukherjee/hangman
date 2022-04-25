@@ -7,11 +7,20 @@ class Hangman {
     }
     setGameTitle() {
         if (this.status === 'Finished') {
-            this.gameTitle = 'Congratulations!'
+            return 'Congratulations!'
         }   else if (this.status === 'Failed') {
-            this.gameTitle = 'Better luck next time!'
+            return 'Better luck next time!'
         }   else {
-            this.gameTitle = 'Try to guess the word below. Best of luck!'
+            return 'Try to guess the word below. Best of luck!'
+        }
+    }
+    setStatusMessage() {
+        if (this.status === 'Finished') {
+            return 'Well done! You guessed the word'
+        }   else if (this.status === 'Playing') {
+            return `Guesses left: ${this.remainingGuesses}`
+        }   else {
+            return `Nice try! The word was "${capitalizeFirstLetterOfEachWord(this.word.join(''))}"`
         }
     }
     calculateStatus() {
@@ -26,8 +35,34 @@ class Hangman {
         }
 
         this.setGameTitle()
+        this.setStatusMessage()
     }
-    getPuzzle() {
+    makeGuess(letter) {
+        letter = letter.toLowerCase()
 
+        if (this.status === 'Playing') {
+            const isLetterUnique = !this.guessedLetters.includes(letter)
+            const isGoodGuess = this.word.includes(letter) || letter === ' '
+
+            if (isGoodGuess && isLetterUnique) {
+                this.guessedLetters.push(letter)
+            }   else if (isLetterUnique && this.remainingGuesses > 0) {
+                this.remainingGuesses--
+            }
+
+            this.calculateStatus()
+        }
+    }
+    get puzzle() {
+        let puzzle = ''
+        this.word.forEach((letter) => {
+            if (this.guessedLetters.includes(letter) || letter === ' ') {
+                puzzle += letter
+            }   else {
+                puzzle += '*'
+            }
+        })
+
+        return capitalizeFirstLetterOfEachWord(puzzle)
     }
 }

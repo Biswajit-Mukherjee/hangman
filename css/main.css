@@ -101,8 +101,14 @@
 /* Main area styling */
 .main {
     width: 100%;
-    display: flex;
     flex: 1;
+}
+
+.main .helper-text {
+    text-align: center;
+    padding: 1.25rem 0;
+    font-size: 1.025rem;
+    font-weight: 500;
 }
 
 /* Game section styling */
@@ -115,6 +121,7 @@
     box-shadow: var(--hgmn-elevation);
     border-radius: .5rem;
     background-color: var(--bg-prim);
+    position: relative;
     overflow: hidden;
 }
 

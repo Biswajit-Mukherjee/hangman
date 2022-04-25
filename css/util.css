@@ -7,15 +7,31 @@
     margin-top: auto;
     padding: .8rem 1.6rem;
     border-radius: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.reset-btn .btn-text {
-    padding: 0 .5rem;
+.reset-btn > * {
+    display: block;
+    height: 30px;
 }
 
 .reset-btn:hover,
 .reset-btn:active {
     background-color: var(--acc-bg);
+}
+
+.reset-btn .btn-icon {
+    display: flex;
+}
+
+.reset-btn .btn-icon i {
+    margin: auto;
+}
+
+.reset-btn .btn-text {
+    padding: 0 .5rem;
 }
 
 .flex--x {
@@ -42,5 +58,26 @@
 }
 
 .success {
-    color: var(--success);
+    color: var(--success) !important;
+    font-weight: 500 !important;
+}
+
+.success::before {
+    content: url('../img/party.ico');
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 38%;
+    transform: scale(.18) rotateY(180deg);
+}
+
+.success::after {
+    content: url('../img/party.ico');
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    right: 38%;
+    transform: scale(.18);
 }

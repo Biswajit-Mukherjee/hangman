@@ -44,20 +44,22 @@
         </nav>
     </header>
 
-    <main class="main">
+    <main class="main flex--y">
+        <h4 class="helper-text">To get started, press any alphabet key on your keyboard</h4>
         <section class="game flex--y">
             <div class="container flex--y">
+                <!-- Game title text -->
                 <h3 class="game__title" id="game-title"></h3>
                 <div class="game__content flex--y">
                     <div class="puzzle-wrapper flex--y">
-                        <!-- <h5 class="content__word accent--bold" id="puzzle">Car Parts</h5> -->
-                        <h5 class="content__word accent--bold" id="puzzle">*** *****</h5>
-                        <p class="content__status" id="status">Guesses left: 5</p>
+                        <h5 class="content__word accent--bold" id="puzzle"></h5>
+                        <p class="content__status" id="status"></p>
                     </div>
 
                     <div class="cta-wrapper flex--y">
                         <button class="btn reset-btn" id="reset">
-                            <i class="fa-solid fa-rotate-right"></i><span class="btn-text">Start over</span>
+                            <span class="btn-icon"><i class="fa-solid fa-rotate-right"></i></span>
+                            <span class="btn-text">Start over</span>
                         </button>
                     </div>
                 </div>
