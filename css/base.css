@@ -33,7 +33,7 @@ html {
 body {
     width: 100%;
     height: 100%;
-    font: 400 100%/1 var(--ff-prim);
+    font: 400 100%/1.54 var(--ff-prim);
     background-color: var(--bg-sec);
     color: var(--txt-prim);
 }

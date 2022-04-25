@@ -117,6 +117,7 @@
     font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
+    line-height: 1;
 }
 
 .main .game .container .game__content {
