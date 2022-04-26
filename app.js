@@ -1,5 +1,6 @@
 const overlay = document.querySelector('#overlay')
 const modalCloseButtons = document.querySelectorAll('.modal-close')
+const discardButtons = document.querySelectorAll('.action--discard')
 const headerActionsButton = document.querySelector('#header-actions-btn')
 const headerActionsMenu = document.querySelector('#header-actions-menu')
 const aboutAppModal = document.querySelector('#about-app-modal')
@@ -45,6 +46,17 @@ resetButton.addEventListener('click', () => {
 
 modalCloseButtons.forEach((modalCloseButton) => {
     modalCloseButton.addEventListener('click', () => {
+        const openModals = document.querySelectorAll('.modal.show')
+        openModals.forEach((modal) => {
+            removeClassFromElement(modal, 'show')
+        })
+        removeClassFromElement(overlay, 'darken')
+        removeClassFromElement(overlay, 'show')
+    })
+})
+
+discardButtons.forEach((discardButton) => {
+    discardButton.addEventListener('click', () => {
         const openModals = document.querySelectorAll('.modal.show')
         openModals.forEach((modal) => {
             removeClassFromElement(modal, 'show')

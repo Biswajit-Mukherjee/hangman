@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="cta-wrapper flex--y">
-                        <button class="btn reset-btn" id="reset">
+                        <button class="btn reset-btn cta" id="reset">
                             <span class="btn-icon"><i class="fa-solid fa-rotate-right"></i></span>
                             <span class="btn-text">Start over</span>
                         </button>
@@ -167,7 +167,13 @@
                                 <div class="option__text">Settings</div>
                             </div>
                         </div>
-                        <div class="preference__content flex--y"></div>
+                        <div class="preference__content">
+                            <div class="content__data"></div>
+                            <div class="content__actions flex--x">
+                                <button class="btn content__action action--discard">Discard</button>
+                                <button class="btn content__action action--save cta">Save changes</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

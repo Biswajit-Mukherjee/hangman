@@ -171,6 +171,38 @@
     background-color: hsl(205, 87%, 85%);
 }
 
+.preference .preference__content {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.preference .preference__content .content__actions {
+    padding: var(--modal-body-child-pad);
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.preference .preference__content .content__actions .content__action {
+    font-weight: 500;
+    padding: .65rem 1.3rem;
+}
+
+.preference .preference__content .content__actions .action--discard {
+    background-color: transparent;
+    color: var(--cta-bg);
+}
+
+.preference .preference__content .content__actions .action--discard:hover,
+.preference .preference__content .content__actions .action--discard:active {
+    background-color: transparent;
+    color: var(--acc-bg);
+}
+
+.preference .preference__content .content__actions .action--save {
+    background-color: var(--cta-bg);
+    color: var(--bg-prim);
+}
+
 /* Popups styling */
 .popup {
     width: fit-content;
@@ -220,11 +252,6 @@
     height: 30px;
 }
 
-.reset-btn:hover,
-.reset-btn:active {
-    background-color: var(--acc-bg);
-}
-
 .reset-btn .btn-icon {
     display: flex;
 }
@@ -235,6 +262,12 @@
 
 .reset-btn .btn-text {
     padding: 0 .5rem;
+}
+
+.cta:hover,
+.cta:active {
+    background-color: var(--acc-bg) !important;
+    color: var(--bg-prim) !important;
 }
 
 .flex--x {
