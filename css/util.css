@@ -26,7 +26,7 @@
     max-width: var(--about-modal-max-width);
     min-height: var(--about-modal-min-height);
     background-color: var(--bg-prim);
-    box-shadow: var(--hgmn-elevation);
+    box-shadow: var(--hgmn-elevation-2);
     border-radius: .5rem;
     margin: auto;
     overflow: hidden;
