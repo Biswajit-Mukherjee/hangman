@@ -114,7 +114,7 @@
 .modal .modal__body.about-app .about-app__desc .desc__version {
     padding-top: 1.25rem;
     font-size: 85%;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .reset-btn {
@@ -198,4 +198,21 @@
     top: 0;
     right: 38%;
     transform: scale(.18);
+}
+
+.github-link {
+    display: block;
+    text-align: center;
+    padding-top: 1rem;
+    font-weight: 500;
+}
+
+.github-link:hover,
+.github-link:active {
+    color: var(--acc-bg);
+    text-decoration: underline;
+}
+
+.github-link .fa-github {
+    font-size: 110%;
 }

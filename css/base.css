@@ -50,6 +50,12 @@ li {
     cursor: pointer;
 }
 
+a {
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+}
+
 .btn {
     font: inherit;
     line-height: normal;
