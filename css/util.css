@@ -115,7 +115,7 @@
 }
 
 .modal .modal__body.about-app .about-app__desc .desc__version {
-    padding-top: 1.25rem;
+    padding: 1rem 0 .5rem;
     font-size: 85%;
     font-weight: 700;
 }
