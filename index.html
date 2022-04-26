@@ -43,7 +43,7 @@
             <ul class="header__actions">
                 <li class="header__action" id="about-app">About app</li>
                 <li class="header__action" id="how-to-play">How to play?</li>
-                <li class="header__action">Preferences</li>
+                <li class="header__action" id="preferences">Preferences</li>
             </ul>
         </nav>
     </header>
@@ -141,6 +141,33 @@
                                 Click on <strong>Start over</strong> button to start a new game session.
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal flex--y" id="preferences-modal">
+                <div class="modal__head flex--x">
+                    <div class="modal-title flex--x">
+                        <span class="title__icon"><i class="fa-solid fa-gears"></i></span>
+                        <span class="title__text">Preferences</span>
+                    </div>
+                    <button class="modal-close btn" title="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal__body flex--y">
+                    <div class="preference">
+                        <div class="preference__options flex--y">
+                            <div class="preference__option accent--bold flex--x">
+                                <div class="option__icon"><i class="fa-solid fa-circle-user"></i></div>
+                                <div class="option__text">Profile</div>
+                            </div>
+                            <div class="preference__option accent--bold flex--x">
+                                <div class="option__icon"><i class="fa-solid fa-gear"></i></div>
+                                <div class="option__text">Settings</div>
+                            </div>
+                        </div>
+                        <div class="preference__content flex--y"></div>
                     </div>
                 </div>
             </div>

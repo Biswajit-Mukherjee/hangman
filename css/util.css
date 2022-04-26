@@ -56,6 +56,7 @@
     color: var(--acc-bg);
     font-size: 105%;
     font-weight: 500;
+    width: var(--modal-title-width);
 }
 
 .modal .modal__head .modal-title .title__icon,
@@ -74,6 +75,7 @@
 
 .modal .modal__head .modal-title .title__text {
     padding-left: .3rem;
+    flex: 1;
 }
 
 /* Generic modal close button styling */
@@ -91,6 +93,7 @@
 }
 
 .modal .modal__body {
+    padding: 0;
     width: 100%;
     flex: 1;
 }
@@ -117,7 +120,11 @@
     font-weight: 700;
 }
 
-/* Game steps modal */
+/* Game steps styling */
+.game__steps {
+    padding: var(--modal-body-child-pad);
+}
+
 .game__steps,
 .game__steps .game__step,
 .game__steps .game__step .step__body {
@@ -131,6 +138,37 @@
 .game__steps .game__step .step__body {
     padding: .25rem 0 1rem;
     font-size: 96%;
+}
+
+/* Preferences styling */
+.preference {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    flex: 1;
+}
+
+.preference > * {
+    height: 100%;
+}
+
+.preference .preference__options {
+    width: calc(var(--modal-title-width) + var(--modal-body-child-pad));
+    align-self: flex-start;
+    border-right: 1px solid hsl(205, 87%, 85%);
+    background-color: var(--bg-sec);
+}
+
+.preference .preference__options .preference__option {
+    width: 100%;
+    padding: var(--modal-body-child-pad);
+    cursor: pointer;
+    gap: .5rem;
+    font-weight: 500;
+}
+
+.preference .preference__options .preference__option:hover,
+.preference .preference__options .preference__option:active {
+    background-color: hsl(205, 87%, 85%);
 }
 
 /* Popups styling */

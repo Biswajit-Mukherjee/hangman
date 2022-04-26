@@ -20,6 +20,8 @@
     --game-min-height: 264px;
     --about-modal-max-width: 680px;
     --about-modal-min-height: 240px;
+    --modal-title-width: 124px;
+    --modal-body-child-pad: 1rem;
 }
 
 *, *::before, *::after {
