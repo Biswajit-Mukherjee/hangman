@@ -51,6 +51,7 @@
 
 /* Header actions menu styling */
 .header__actions-menu {
+    min-width: 200px;
     width: fit-content;
     background-color: var(--bg-prim);
     box-shadow: var(--hgmn-elevation);
