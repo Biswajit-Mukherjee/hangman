@@ -39,6 +39,7 @@ const getCreditScore = () => {
 
 const getGameTitle = (instance) => {
     instance.status === 'Finished' ? addClassToElement(gameTitle, 'success') : removeClassFromElement(gameTitle, 'success')
+    instance.status === 'Finished' ? showPopup(creditSuccessPopup) : removeClassFromElement(creditSuccessPopup, 'show')
     return instance.setGameTitle()
 }
 
@@ -84,4 +85,11 @@ const capitalizeFirstLetterOfEachWord = (originalPuzzle) => {
     })
 
     return wordPuzzle.trim()
+}
+
+const showPopup = (popup) => {
+    showElement(popup)
+    setTimeout(() => {
+        removeClassFromElement(creditSuccessPopup, 'show')
+    }, 3000)
 }

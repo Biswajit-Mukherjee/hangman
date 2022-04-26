@@ -10,6 +10,7 @@ const puzzleElement = document.querySelector('#puzzle')
 const statusElement = document.querySelector('#status')
 const resetButton = document.querySelector('#reset')
 const appVersion = document.querySelector('#app-version')
+const creditSuccessPopup = document.querySelector('#credit-success-popup')
 const difficultyLevel = 2
 const guesses = 5
 const versionNumber = '1.04.22.26'
