@@ -9,8 +9,14 @@ const gameTitle = document.querySelector('#game-title')
 const puzzleElement = document.querySelector('#puzzle')
 const statusElement = document.querySelector('#status')
 const resetButton = document.querySelector('#reset')
+const appVersion = document.querySelector('#app-version')
 const difficultyLevel = 2
 const guesses = 5
+const versionNumber = '1.04.22.26'
+const version = `Version ${versionNumber}`
+
+// Render app version
+appVersion.textContent = version
 
 overlay.addEventListener('click', () => {
     const openElements = selectAllElementsWithClass('show')
