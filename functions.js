@@ -60,6 +60,7 @@ const renderGame = (instance) => {
     gameTitle.textContent = getGameTitle(instance)
     puzzleElement.textContent = getPuzzle(instance)
     statusElement.innerHTML = getPuzzleStatus(instance)
+    userCredits.textContent = `Credit: ${getCreditScore()} coins`
 }
 
 const startGame = (guesses, difficultyLevel) => {

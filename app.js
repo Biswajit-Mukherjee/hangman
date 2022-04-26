@@ -16,6 +16,11 @@ const statusElement = document.querySelector('#status')
 const resetButton = document.querySelector('#reset')
 const appVersion = document.querySelector('#app-version')
 const creditSuccessPopup = document.querySelector('#credit-success-popup')
+const userCredits = document.querySelector('.credit-score')
+const profileOption = document.querySelector('#profile')
+const settingsOption = document.querySelector('#settings')
+const profileData = document.querySelector('#profile-data')
+const settingsData = document.querySelector('#settings-data')
 const difficultyLevel = 2
 const guesses = 5
 const versionNumber = '1.04.22.26'
@@ -23,6 +28,27 @@ const version = `Version ${versionNumber}`
 
 // Render app version
 appVersion.textContent = version
+
+if (profileOption.classList.contains('selected')) {
+    removeClassFromElement(settingsData, 'show')
+    addClassToElement(profileData, 'show')
+}   else if (settingsOption.classList.contains('selected')) {
+    removeClassFromElement(profileData, 'show')
+    addClassToElement(settingsData, 'show')
+}   else {
+    removeClassFromElement(profileData, 'show')
+    removeClassFromElement(settingsData, 'show')
+}
+
+profileOption.addEventListener('click', () => {
+    profileOption.classList.toggle('selected')
+    settingsOption.classList.toggle('selected')
+})
+
+settingsOption.addEventListener('click', () => {
+    settingsOption.classList.toggle('selected')
+    profileOption.classList.toggle('selected')
+})
 
 overlay.addEventListener('click', () => {
     const openElements = selectAllElementsWithClass('show')

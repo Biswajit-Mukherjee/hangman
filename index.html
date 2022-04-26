@@ -158,17 +158,34 @@
                 <div class="modal__body flex--y">
                     <div class="preference">
                         <div class="preference__options flex--y">
-                            <div class="preference__option accent--bold flex--x">
+                            <div class="preference__option accent--bold flex--x" id="profile">
                                 <div class="option__icon"><i class="fa-solid fa-circle-user"></i></div>
                                 <div class="option__text">Profile</div>
                             </div>
-                            <div class="preference__option accent--bold flex--x">
+                            <div class="preference__option accent--bold flex--x" id="settings">
                                 <div class="option__icon"><i class="fa-solid fa-gear"></i></div>
                                 <div class="option__text">Settings</div>
                             </div>
                         </div>
                         <div class="preference__content">
-                            <div class="content__data"></div>
+                            <div class="content__data">
+                                <div class="data--profile flex--y" id="profile-data">
+                                    <div class="user-data" id="user-data">
+                                        <div class="title accent--bold">User information</div>
+                                        <div class="user-info flex--x">
+                                            <div class="user__pic"><i class="fa-solid fa-user"></i></div>
+                                            <div class="user__name"><h3>John Doe</h3></div>
+                                        </div>
+                                    </div>
+                                    <div class="game-data" id="game-data">
+                                        <div class="title accent--bold">Game status</div>
+                                        <div class="game-info flex--x">
+                                            <div class="credit-score"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="data--settings" id="settings-data"></div>
+                            </div>
                             <div class="content__actions flex--x">
                                 <button class="btn content__action action--discard">Discard</button>
                                 <button class="btn content__action action--save cta">Save changes</button>
