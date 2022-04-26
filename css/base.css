@@ -6,6 +6,7 @@
     --bg-prim: #fff;
     --bg-sec: hsl(205, 87%, 95%);
     --txt-prim: #1b1b1b;
+    --border-rad-prim: .5rem;
     --box-shadow-rgb: 5, 30, 60;
     --box-shadow-success-rgb: 9, 170, 89;
     --hgmn-elevation: 0 1px 3px 0 rgba(var(--box-shadow-rgb), .3), 0 2px 6px 2px rgba(var(--box-shadow-rgb), .15);

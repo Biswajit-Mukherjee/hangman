@@ -55,7 +55,7 @@
     width: fit-content;
     background-color: var(--bg-prim);
     box-shadow: var(--hgmn-elevation);
-    border-radius: .25rem;
+    border-radius: calc(var(--border-rad-prim)/2);
     position: fixed;
     top: 2%;
     right: 1%;
@@ -109,7 +109,7 @@
     margin: auto;
     padding: 1.25rem;
     box-shadow: var(--hgmn-elevation);
-    border-radius: .5rem;
+    border-radius: var(--border-rad-prim);
     background-color: var(--bg-prim);
     position: relative;
     overflow: hidden;

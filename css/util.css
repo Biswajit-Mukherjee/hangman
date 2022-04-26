@@ -27,7 +27,7 @@
     min-height: var(--about-modal-min-height);
     background-color: var(--bg-prim);
     box-shadow: var(--hgmn-elevation-2);
-    border-radius: .5rem;
+    border-radius: var(--border-rad-prim);
     margin: auto;
     overflow: hidden;
     position: absolute;
@@ -117,12 +117,28 @@
     font-weight: 700;
 }
 
+/* Game steps modal */
+.game__steps,
+.game__steps .game__step,
+.game__steps .game__step .step__body {
+    flex: 1;
+}
+
+.game__steps .game__step .step__title {
+    line-height: 1;
+}
+
+.game__steps .game__step .step__body {
+    padding: .25rem 0 1rem;
+    font-size: 96%;
+}
+
 /* Popups styling */
 .popup {
     width: fit-content;
     min-height: 2.5rem;
     box-shadow: var(--hgmn-elevation-2);
-    border-radius: .25rem;
+    border-radius: calc(var(--border-rad-prim)/2);
     background-color: var(--bg-prim);
     position: fixed;
     top: 2.5%;

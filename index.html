@@ -42,7 +42,7 @@
         <nav class="header__actions-menu" id="header-actions-menu">
             <ul class="header__actions">
                 <li class="header__action" id="about-app">About app</li>
-                <li class="header__action">How to play?</li>
+                <li class="header__action" id="how-to-play">How to play?</li>
                 <li class="header__action">Preferences</li>
             </ul>
         </nav>
@@ -107,6 +107,40 @@
                         </div>
                         <!-- Version format: version.mm.yy.dd -->
                         <div class="desc__version" id="app-version"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal flex--y" id="how-to-play-modal">
+                <div class="modal__head flex--x">
+                    <div class="modal-title flex--x">
+                        <span class="title__icon"><i class="fa-solid fa-circle-question"></i></span>
+                        <span class="title__text">How to play</span>
+                    </div>
+                    <button class="modal-close btn" title="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal__body flex--y">
+                    <div class="game__steps flex--y">
+                        <div class="game__step flex--y">
+                            <h3 class="step__title accent--bold">Step 1</h3>
+                            <div class="step__body">
+                                Choose a difficulty level from under <strong>Preferences</strong> option.
+                            </div>
+                        </div>
+                        <div class="game__step flex--y">
+                            <h3 class="step__title accent--bold">Step 2</h3>
+                            <div class="step__body">
+                                Press alphabet keys from your keyboard to reveal correctly guessed letters.
+                            </div>
+                        </div>
+                        <div class="game__step flex--y">
+                            <h3 class="step__title accent--bold">Step 3</h3>
+                            <div class="step__body">
+                                Click on <strong>Start over</strong> button to start a new game session.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
