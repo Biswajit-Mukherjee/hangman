@@ -22,6 +22,21 @@ const createNewGameInstance = (puzzle, guesses) => {
     return new Hangman(puzzle, guesses)
 }
 
+const fetchSavedCredits = () => {
+    const credits = localStorage.getItem('hangman-credits')
+    return credits ? JSON.parse(credits) : 0
+}
+
+const saveCredits = (credits) => {
+    if (credits) {
+        localStorage.setItem('hangman-credits', credits)
+    }
+}
+
+const getCreditScore = () => {
+    return fetchSavedCredits()
+}
+
 const getGameTitle = (instance) => {
     instance.status === 'Finished' ? addClassToElement(gameTitle, 'success') : removeClassFromElement(gameTitle, 'success')
     return instance.setGameTitle()
@@ -36,6 +51,7 @@ const getPuzzleStatus = (instance) => {
 }
 
 const renderGame = (instance) => {
+    gameCredits.textContent = getCreditScore()
     gameTitle.textContent = getGameTitle(instance)
     puzzleElement.textContent = getPuzzle(instance)
     statusElement.textContent = getPuzzleStatus(instance)

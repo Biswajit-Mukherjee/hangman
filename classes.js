@@ -3,6 +3,7 @@ class Hangman {
         this.word = word.toLowerCase().split('')
         this.guessedLetters = []
         this.remainingGuesses = remainingGuesses
+        this.credits = getCreditScore()
         this.calculateStatus()
     }
     setGameTitle() {
@@ -28,6 +29,9 @@ class Hangman {
 
         if (finished) {
             this.status = 'Finished'
+            this.credits += 1
+            saveCredits(this.credits)
+            console.log(this)
         }   else if (this.remainingGuesses === 0) {
             this.status = 'Failed'
         }   else {
