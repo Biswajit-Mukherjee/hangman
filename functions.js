@@ -48,14 +48,18 @@ const getPuzzle = (instance) => {
 }
 
 const getPuzzleStatus = (instance) => {
-    return instance.setStatusMessage()
+    const puzzleStatus = instance.setStatusMessage()
+    if (instance.status === 'Failed') {
+        return `Nice try! The puzzle was <strong>"${puzzleStatus.substring(0, puzzleStatus.length)}"</strong>`
+    }
+    return puzzleStatus
 }
 
 const renderGame = (instance) => {
     gameCredits.textContent = getCreditScore()
     gameTitle.textContent = getGameTitle(instance)
     puzzleElement.textContent = getPuzzle(instance)
-    statusElement.textContent = getPuzzleStatus(instance)
+    statusElement.innerHTML = getPuzzleStatus(instance)
 }
 
 const startGame = (guesses, difficultyLevel) => {

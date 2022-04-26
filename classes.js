@@ -21,7 +21,7 @@ class Hangman {
         }   else if (this.status === 'Playing') {
             return `Guesses left: ${this.remainingGuesses}`
         }   else {
-            return `Nice try! The puzzle was "${capitalizeFirstLetterOfEachWord(this.word.join(''))}"`
+            return capitalizeFirstLetterOfEachWord(this.word.join(''))
         }
     }
     calculateStatus() {
