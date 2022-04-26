@@ -9,6 +9,7 @@
 .header {
     justify-content: space-between;
     position: relative;
+    border-bottom: 1px solid var(--bg-prim);
 }
 
 /* Generic logo styling */
@@ -88,11 +89,15 @@
     flex: 1;
 }
 
-.main .helper-text {
+.main .helper {
     text-align: center;
-    padding: 1.25rem 0;
+    padding: 1.25rem;
+}
+
+.main .helper__text {
     font-size: 1.025rem;
     font-weight: 500;
+    padding-inline: 0;
 }
 
 /* Game section styling */
@@ -148,7 +153,11 @@
 }
 
 /* Footer styling */
-.footer p {
+.footer {
+    border-top: 1px solid var(--bg-prim);
+}
+
+.footer .copyright {
     margin: auto;
 }
 

@@ -16,6 +16,7 @@ overlay.addEventListener('click', () => {
     openElements.forEach((element) => {
         removeClassFromElement(element, 'show')
     })
+    removeClassFromElement(overlay, 'darken')
     removeClassFromElement(overlay, 'show')
 })
 

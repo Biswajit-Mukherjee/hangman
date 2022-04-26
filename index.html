@@ -49,14 +49,19 @@
     </header>
 
     <main class="main flex--y">
-        <h4 class="helper-text">To get started, press any alphabet key on your keyboard</h4>
+        <section class="helper">
+            <h4 class="helper__text">To get started, press any alphabet key on your keyboard</h4>
+        </section>
+
         <section class="game flex--y">
             <div class="container flex--y">
                 <!-- Game title text -->
                 <h3 class="game__title" id="game-title"></h3>
                 <div class="game__content flex--y">
                     <div class="puzzle-wrapper flex--y">
+                        <!-- Puzzle -->
                         <h5 class="content__word accent--bold" id="puzzle"></h5>
+                        <!-- Game status -->
                         <p class="content__status" id="status"></p>
                     </div>
 
@@ -74,7 +79,10 @@
         <section class="modals flex--y">
             <div class="modal flex--y" id="about-app-modal">
                 <div class="modal__head flex--x">
-                    <div class="modal-title"><i class="fa-solid fa-circle-info"></i> About</div>
+                    <div class="modal-title flex--x">
+                        <span class="title__icon"><i class="fa-solid fa-circle-info"></i></span>
+                        <span class="title__text">About app</span>
+                    </div>
                     <button class="modal-close btn" title="Close">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
@@ -99,7 +107,7 @@
     </main>
 
     <footer class="footer flex--y">
-        <p>&copy; 2022. Biswajit Mukherjee</p>
+        <p class="copyright">&copy; 2022. Biswajit Mukherjee</p>
     </footer>
 
     <script src="./functions.js"></script>

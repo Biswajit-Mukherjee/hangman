@@ -58,6 +58,24 @@
     font-weight: 500;
 }
 
+.modal .modal__head .modal-title .title__icon,
+.modal .modal__head .modal-title .title__text {
+    display: block;
+    height: 100%;
+}
+
+.modal .modal__head .modal-title .title__icon {
+    display: flex;
+}
+
+.modal .modal__head .modal-title .title__icon i {
+    margin: auto;
+}
+
+.modal .modal__head .modal-title .title__text {
+    padding-left: .3rem;
+}
+
 /* Generic modal close button styling */
 .modal-close {
     display: flex;
