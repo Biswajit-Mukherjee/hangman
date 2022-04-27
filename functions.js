@@ -97,7 +97,7 @@ const showPopup = (popup) => {
     showElement(popup)
     setTimeout(() => {
         removeClassFromElement(creditSuccessPopup, 'show')
-    }, 3000)
+    }, 5000)
 }
 
 const selectMenuOption = (menuOption, className) => {
