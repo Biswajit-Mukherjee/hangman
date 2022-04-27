@@ -27,7 +27,7 @@ const profileData = document.querySelector('#profile-data')
 const settingsData = document.querySelector('#settings-data')
 const difficultyLevel = 2
 const guesses = 5
-const versionNumber = '1.04.22.26'
+const versionNumber = '1.04.22.27'
 const version = `Version ${versionNumber}`
 
 // Render app version
