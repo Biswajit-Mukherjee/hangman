@@ -1,6 +1,5 @@
 const overlay = document.querySelector('#overlay')
 const modalCloseButtons = document.querySelectorAll('.modal-close')
-const discardButtons = document.querySelectorAll('.action--discard')
 const headerActionsButton = document.querySelector('#header-actions-btn')
 const headerActionsMenu = document.querySelector('#header-actions-menu')
 const aboutAppModal = document.querySelector('#about-app-modal')
@@ -16,6 +15,9 @@ const statusElement = document.querySelector('#status')
 const resetButton = document.querySelector('#reset')
 const appVersion = document.querySelector('#app-version')
 const creditSuccessPopup = document.querySelector('#credit-success-popup')
+const saveChangesSuccessPopup = document.querySelector('#save-changes-success-popup')
+const discardButtons = document.querySelectorAll('.action--discard')
+const saveChangesButtons = document.querySelectorAll('.action--save')
 const userCredits = document.querySelector('.credit-score')
 const creditsInfoScore = document.querySelector('.info__score')
 const firstOption = document.querySelector('.preference__option:first-of-type')
@@ -86,6 +88,18 @@ discardButtons.forEach((discardButton) => {
         })
         removeClassFromElement(overlay, 'darken')
         removeClassFromElement(overlay, 'show')
+    })
+})
+
+saveChangesButtons.forEach((saveChangesButton) => {
+    saveChangesButton.addEventListener('click', () => {
+        const openModals = document.querySelectorAll('.modal.show')
+        openModals.forEach((modal) => {
+            removeClassFromElement(modal, 'show')
+        })
+        removeClassFromElement(overlay, 'darken')
+        removeClassFromElement(overlay, 'show')
+        showPopup(saveChangesSuccessPopup)
     })
 })
 

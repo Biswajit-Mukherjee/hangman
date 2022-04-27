@@ -96,8 +96,8 @@ const capitalizeFirstLetterOfEachWord = (originalPuzzle) => {
 const showPopup = (popup) => {
     showElement(popup)
     setTimeout(() => {
-        removeClassFromElement(creditSuccessPopup, 'show')
-    }, 5000)
+        removeClassFromElement(popup, 'show')
+    }, 3000)
 }
 
 const selectMenuOption = (menuOption, className) => {
