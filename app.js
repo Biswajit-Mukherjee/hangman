@@ -17,8 +17,10 @@ const resetButton = document.querySelector('#reset')
 const appVersion = document.querySelector('#app-version')
 const creditSuccessPopup = document.querySelector('#credit-success-popup')
 const userCredits = document.querySelector('.credit-score')
-const profileOption = document.querySelector('#profile')
-const settingsOption = document.querySelector('#settings')
+const creditsInfoScore = document.querySelector('.info__score')
+const firstOption = document.querySelector('.preference__option:first-of-type')
+const profileOption = document.querySelector('.preference__option#profile')
+const settingsOption = document.querySelector('.preference__option#settings')
 const profileData = document.querySelector('#profile-data')
 const settingsData = document.querySelector('#settings-data')
 const difficultyLevel = 2
@@ -29,25 +31,21 @@ const version = `Version ${versionNumber}`
 // Render app version
 appVersion.textContent = version
 
-if (profileOption.classList.contains('selected')) {
-    removeClassFromElement(settingsData, 'show')
-    addClassToElement(profileData, 'show')
-}   else if (settingsOption.classList.contains('selected')) {
-    removeClassFromElement(profileData, 'show')
-    addClassToElement(settingsData, 'show')
-}   else {
-    removeClassFromElement(profileData, 'show')
-    removeClassFromElement(settingsData, 'show')
-}
+firstOption.classList.add('selected')
+
+rendeMenuOptionContent(profileOption, profileData)
+rendeMenuOptionContent(settingsOption, settingsData)
 
 profileOption.addEventListener('click', () => {
-    profileOption.classList.toggle('selected')
-    settingsOption.classList.toggle('selected')
+    selectMenuOption(profileOption, 'preference__option')
+    rendeMenuOptionContent(profileOption, profileData)
+    rendeMenuOptionContent(settingsOption, settingsData)
 })
 
 settingsOption.addEventListener('click', () => {
-    settingsOption.classList.toggle('selected')
-    profileOption.classList.toggle('selected')
+    selectMenuOption(settingsOption, 'preference__option')
+    rendeMenuOptionContent(profileOption, profileData)
+    rendeMenuOptionContent(settingsOption, settingsData)
 })
 
 overlay.addEventListener('click', () => {

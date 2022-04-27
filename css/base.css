@@ -22,6 +22,7 @@
     --about-modal-min-height: 240px;
     --modal-title-width: 124px;
     --modal-body-child-pad: 1rem;
+    --menu-option-content-min-height: 224px;
 }
 
 *, *::before, *::after {

@@ -178,14 +178,34 @@
 
 .preference .preference__content .content__data {
     padding: 1rem;
+    min-height: var(--menu-option-content-min-height);
 }
 
-.preference .preference__content .content__data .data--profile {
-    gap: 1.5rem;
+.preference .preference__content .content__data .data--profile,
+.preference .preference__content .content__data .data--settings {
+    flex: 1;
+    display: none;
 }
 
-.preference .preference__content .content__data .data--profile .title {
-    padding-bottom: .25rem;
+.preference .preference__content .content__data .data--profile.show,
+.preference .preference__content .content__data .data--settings.show {
+    display: block;
+}
+
+.preference .preference__content .content__data .wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 100%;
+}
+
+.preference .preference__content .content__data .wrapper > * {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.preference .preference__content .content__data .wrapper .title {
+    font-size: 110%;
 }
 
 .preference .preference__content .content__data .data--profile .user-info {
@@ -193,7 +213,13 @@
     font-size: 1.5rem;
 }
 
-.preference .preference__content .content__data .data--profile .user__pic {
+.preference .preference__content .content__data .data--profile .user-info *,
+.preference .preference__content .content__data .data--profile .game-info * {
+    height: 100%;
+    padding-block: .25rem;
+}
+
+.preference .preference__content .content__data .data--profile .user-info .user__pic {
     width: 3rem;
     height: 3rem;
     display: flex;
@@ -201,19 +227,43 @@
     border: 1px solid;
 }
 
-.preference .preference__content .content__data .data--profile .user__pic i {
+.preference .preference__content .content__data .data--profile .user-info .user__pic i {
     height: fit-content;
     margin: auto;
 }
 
-.data--profile,
-.data--settings {
-    display: none;
+.preference .preference__content .content__data .data--profile .user-info .user__name {
+    flex: 1;
 }
 
-.data--profile.show,
-.data--settings.show {
-    display: block;
+.preference .preference__content .content__data .data--profile .user-info .user__name h3 {
+    font-weight: 500;
+}
+
+.preference .preference__content .content__data .data--profile .game-info .credit-score {
+    width: 100%;
+}
+
+.preference .preference__content .content__data .wrapper .credits-info {
+    height: 24px;
+    margin: auto 0;
+    gap: .75rem;
+}
+
+.preference .preference__content .content__data .wrapper .info__cta {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.preference .preference__content .content__data .wrapper .diff-levels {
+    font: inherit;
+    font-size: 96%;
+    padding: .25rem 1rem;
+    outline: none;
+    border: none;
+    background-color: var(--bg-sec);
+    border-radius: .25rem;
 }
 
 .preference .preference__content .content__actions {
@@ -376,4 +426,8 @@
 
 .selected {
     background-color: hsl(205, 87%, 85%);
+}
+
+.flip-y {
+    transform: rotateY(180deg);
 }

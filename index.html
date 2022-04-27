@@ -168,23 +168,51 @@
                             </div>
                         </div>
                         <div class="preference__content">
-                            <div class="content__data">
+                            <div class="content__data flex--y">
                                 <div class="data--profile flex--y" id="profile-data">
-                                    <div class="user-data" id="user-data">
-                                        <div class="title accent--bold">User information</div>
-                                        <div class="user-info flex--x">
-                                            <div class="user__pic"><i class="fa-solid fa-user"></i></div>
-                                            <div class="user__name"><h3>John Doe</h3></div>
+                                    <div class="wrapper">
+                                        <div class="user-data flex--y" id="user-data">
+                                            <div class="title accent--bold">User information</div>
+                                            <div class="user-info flex--x">
+                                                <div class="user__pic"><i class="fa-solid fa-user"></i></div>
+                                                <div class="user__name"><h3>John Doe</h3></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="game-data" id="game-data">
-                                        <div class="title accent--bold">Game status</div>
-                                        <div class="game-info flex--x">
-                                            <div class="credit-score"></div>
+
+                                        <div class="game-data flex--y" id="game-data">
+                                            <div class="title accent--bold">Game status</div>
+                                            <div class="game-info flex--x">
+                                                <div class="credit-score"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="data--settings" id="settings-data"></div>
+                                <div class="data--settings" id="settings-data">
+                                    <div class="wrapper">
+                                        <div class="credits">
+                                            <div class="title accent--bold">Credits summary</div>
+                                            <div class="credits-info flex--x">
+                                                <div class="info__score"></div>
+                                                <button class="btn info__cta flip-y" id="reset-credits" title="Reset credits">
+                                                    <i class="fa-solid fa-rotate-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="levels">
+                                            <div class="title accent--bold">Levels summary</div>
+                                            <div class="levels-info">
+                                                <label for="difficulty-level">
+                                                    Choose difficulty level
+                                                </label>
+                                                <select name="levels" id="difficulty-level" class="diff-levels">
+                                                    <option value="1">Level 1</option>
+                                                    <option value="2">Level 2</option>
+                                                    <option value="3">Level 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="content__actions flex--x">
                                 <button class="btn content__action action--discard">Discard</button>

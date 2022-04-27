@@ -60,7 +60,8 @@ const renderGame = (instance) => {
     gameTitle.textContent = getGameTitle(instance)
     puzzleElement.textContent = getPuzzle(instance)
     statusElement.innerHTML = getPuzzleStatus(instance)
-    userCredits.textContent = `Credit: ${getCreditScore()} coins`
+    userCredits.textContent = `You have ${getCreditScore()} coins in your credit`
+    creditsInfoScore.textContent = `Credits: ${getCreditScore()}`
 }
 
 const startGame = (guesses, difficultyLevel) => {
@@ -97,4 +98,25 @@ const showPopup = (popup) => {
     setTimeout(() => {
         removeClassFromElement(creditSuccessPopup, 'show')
     }, 3000)
+}
+
+const selectMenuOption = (menuOption, className) => {
+    const options = document.querySelectorAll(`.${className}`)
+    
+    options.forEach((option) => {
+        option.classList.remove('selected')
+    })
+    menuOption.classList.add('selected')
+}
+
+const rendeMenuOptionContent = (menuOption, menuOptionContent) => {
+    if (menuOption.classList.contains('selected')) {
+        addClassToElement(menuOptionContent, 'show')
+    }   else {
+        removeClassFromElement(menuOptionContent, 'show')
+    }
+}
+
+const toggleElement = (element, className) => {
+    element.classList.toggle(className)
 }
