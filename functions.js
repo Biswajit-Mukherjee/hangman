@@ -109,6 +109,22 @@ const selectMenuOption = (menuOption, className) => {
     menuOption.classList.add('selected')
 }
 
+const renderMenu = () => {
+    rendeMenuOptionContent(profileOption, profileData)
+    rendeMenuOptionContent(settingsOption, settingsData)
+}
+
+const selectFirstMenuOption = () => {
+    firstOption.classList.add('selected')
+}
+
+const resetMenu = () => {
+    const menuOptions = document.querySelectorAll('.preference__option')
+    menuOptions.forEach((menuOption) => {
+        menuOption.classList.remove('selected')
+    })
+}
+
 const rendeMenuOptionContent = (menuOption, menuOptionContent) => {
     if (menuOption.classList.contains('selected')) {
         addClassToElement(menuOptionContent, 'show')

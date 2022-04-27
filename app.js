@@ -31,21 +31,22 @@ const version = `Version ${versionNumber}`
 // Render app version
 appVersion.textContent = version
 
-firstOption.classList.add('selected')
+// Render preferences menu
+selectFirstMenuOption()
+renderMenu()
 
-rendeMenuOptionContent(profileOption, profileData)
-rendeMenuOptionContent(settingsOption, settingsData)
+// Start game
+startGame(guesses, difficultyLevel)
 
+// Listen for events
 profileOption.addEventListener('click', () => {
     selectMenuOption(profileOption, 'preference__option')
-    rendeMenuOptionContent(profileOption, profileData)
-    rendeMenuOptionContent(settingsOption, settingsData)
+    renderMenu()
 })
 
 settingsOption.addEventListener('click', () => {
     selectMenuOption(settingsOption, 'preference__option')
-    rendeMenuOptionContent(profileOption, profileData)
-    rendeMenuOptionContent(settingsOption, settingsData)
+    renderMenu()
 })
 
 overlay.addEventListener('click', () => {
@@ -61,8 +62,6 @@ headerActionsButton.addEventListener('click', () => {
     showElement(overlay)
     showElement(headerActionsMenu)
 })
-
-startGame(guesses, difficultyLevel)
 
 resetButton.addEventListener('click', () => {
     startGame(guesses, difficultyLevel)
@@ -109,4 +108,7 @@ preferencesOption.addEventListener('click', () => {
     showElement(overlay)
     addClassToElement(overlay, 'darken')
     showElement(preferencesModal)
+    resetMenu()
+    selectFirstMenuOption()
+    renderMenu()
 })
