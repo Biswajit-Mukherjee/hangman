@@ -1,3 +1,4 @@
+// DOM variables
 const overlay = document.querySelector('#overlay')
 const modalCloseButtons = document.querySelectorAll('.modal-close')
 const headerActionsButton = document.querySelector('#header-actions-btn')
@@ -31,6 +32,7 @@ const levelNumber = document.querySelector('#level-number')
 const difficultyLevelSelectDropdown = document.querySelector('#difficulty-level')
 const resetCreditsButton = document.querySelector('#reset-credits')
 
+// Code variables
 const popupTimeout = 3000
 const guesses = 5
 const versionNumber = 1
