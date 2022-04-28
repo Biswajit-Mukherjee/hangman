@@ -28,9 +28,16 @@ const fetchSavedCredits = () => {
 }
 
 const saveCredits = (credits) => {
+    credits = credits.toString()
     if (credits) {
-        localStorage.setItem('hangman-credits', credits)
+        localStorage.setItem('hangman-credits', JSON.stringify(credits))
     }
+}
+
+const resetCredits = () => {
+    let credits = localStorage.getItem('hangman-credits')
+    credits = 0
+    return credits
 }
 
 const getCreditScore = () => {
@@ -67,14 +74,11 @@ const setDifficultyLevel = (level) => {
 }
 
 const renderGame = (instance) => {
+    levelNumber.textContent = difficultyLevel
     gameCredits.textContent = getCreditScore()
     gameTitle.textContent = getGameTitle(instance)
     puzzleElement.textContent = getPuzzle(instance)
     statusElement.innerHTML = getPuzzleStatus(instance)
-    userCredits.textContent = `You have ${getCreditScore()} coins in your credit`
-    creditsInfoScore.textContent = `Credits: ${getCreditScore()}`
-    levelChosen.innerHTML = `Level chosen: <strong>Level ${difficultyLevel}</strong>`
-    levelNumber.textContent = difficultyLevel
 }
 
 const startGame = (guesses, difficultyLevel) => {
@@ -110,7 +114,7 @@ const showPopup = (popup) => {
     showElement(popup)
     setTimeout(() => {
         removeClassFromElement(popup, 'show')
-    }, 3000)
+    }, 5000)
 }
 
 const selectMenuOption = (menuOption, className) => {
@@ -125,6 +129,9 @@ const selectMenuOption = (menuOption, className) => {
 const renderMenu = () => {
     rendeMenuOptionContent(profileOption, profileData)
     rendeMenuOptionContent(settingsOption, settingsData)
+    userCredits.textContent = `You have ${getCreditScore()} coins in your credit`
+    creditsInfoScore.textContent = `Credits: ${getCreditScore()}`
+    levelChosen.innerHTML = `Level chosen: <strong>Level ${difficultyLevel}</strong>`
 }
 
 const selectFirstMenuOption = () => {

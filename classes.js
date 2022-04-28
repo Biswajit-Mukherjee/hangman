@@ -29,6 +29,7 @@ class Hangman {
 
         if (finished) {
             this.status = 'Finished'
+            this.credits = parseInt(this.credits) !== 'NaN' ? parseInt(this.credits) : 0
             this.credits += 1
             saveCredits(this.credits)
             console.log(this)

@@ -28,6 +28,7 @@ const settingsData = document.querySelector('#settings-data')
 const levelChosen = document.querySelector('.level-chosen')
 const levelNumber = document.querySelector('#level-number')
 const difficultyLevelSelectDropdown = document.querySelector('#difficulty-level')
+const resetCreditsButton = document.querySelector('#reset-credits')
 
 let difficultyLevel = getDifficultyLevel()
 const guesses = 5
@@ -118,16 +119,45 @@ preferencesOption.addEventListener('click', () => {
     selectFirstMenuOption()
     renderMenu()
 
+    let credit = getCreditScore()
+    let isCreditScoreChanged = false
+    let isDifficultyLevelChanged = false
+    difficultyLevelSelectDropdown.value = getDifficultyLevel()
+
+    resetCreditsButton.addEventListener('click', () => {
+        isCreditScoreChanged = credit !== getCreditScore()
+        if (isCreditScoreChanged) {
+            credit = resetCredits()
+            creditsInfoScore.textContent = `Credits: ${credit}`
+        }
+
+        console.log(isCreditScoreChanged || isDifficultyLevelChanged)
+    })
+
     difficultyLevelSelectDropdown.addEventListener('change', (e) => {
-        setDifficultyLevel(e.target.value)
+        const selectedDifficultyLevel = e.target.value
+        const savedDifficultyLevel = getDifficultyLevel()
+        isDifficultyLevelChanged = selectedDifficultyLevel !== savedDifficultyLevel
+
+        console.log('Selected value: ' + selectedDifficultyLevel)
+        console.log('Saved value: ' + savedDifficultyLevel)
+
+        if (isDifficultyLevelChanged) {
+            setDifficultyLevel(selectedDifficultyLevel)
+        }
+
+        console.log(isCreditScoreChanged || isDifficultyLevelChanged)
     })
 
     if (saveChangesButton) {
         saveChangesButton.addEventListener('click', () => {
+            saveCredits(credit)
             removeClassFromElement(preferencesModal, 'show')
             removeClassFromElement(overlay, 'darken')
             removeClassFromElement(overlay, 'show')
-            showPopup(saveChangesSuccessPopup)
+            if (isCreditScoreChanged || isDifficultyLevelChanged) {
+                showPopup(saveChangesSuccessPopup)
+            }
             difficultyLevel = getDifficultyLevel()
             startGame(guesses, difficultyLevel)
         })
