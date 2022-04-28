@@ -33,8 +33,11 @@ const resetCreditsButton = document.querySelector('#reset-credits')
 
 const popupTimeout = 3000
 const guesses = 5
-const versionNumber = '1.04.22.27'
-const version = `Version ${versionNumber}`
+const versionNumber = 1
+const monthNumber = 04
+const year = 22
+const dayOfMonth = 28
+const version = `Version ${versionNumber}.${monthNumber}.${year}.${dayOfMonth}`
 let difficultyLevel = getDifficultyLevel()
 
 // Render app version
