@@ -182,7 +182,7 @@
 .main .game .game-level .level__steps {
     position: relative;
     top: 6px;
-    left: -4px;
+    left: -2px;
 }
 
 .main .game .game-level .level__step {
@@ -190,7 +190,7 @@
     display: block;
     width: var(--game-level-step-width);
     height: 2px;
-    background: var(--acc-bg);
+    background-color: black;
     margin: 2px 0;
 }
 

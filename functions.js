@@ -74,7 +74,7 @@ const setDifficultyLevel = (level) => {
 }
 
 const renderGame = (instance) => {
-    levelNumber.textContent = difficultyLevel
+    levelNumber.textContent = getDifficultyLevel()
     gameCredits.textContent = getCreditScore()
     gameTitle.textContent = getGameTitle(instance)
     puzzleElement.textContent = getPuzzle(instance)
@@ -114,7 +114,7 @@ const showPopup = (popup) => {
     showElement(popup)
     setTimeout(() => {
         removeClassFromElement(popup, 'show')
-    }, 5000)
+    }, popupTimeout)
 }
 
 const selectMenuOption = (menuOption, className) => {
@@ -131,7 +131,7 @@ const renderMenu = () => {
     rendeMenuOptionContent(settingsOption, settingsData)
     userCredits.textContent = `You have ${getCreditScore()} coins in your credit`
     creditsInfoScore.textContent = `Credits: ${getCreditScore()}`
-    levelChosen.innerHTML = `Level chosen: <strong>Level ${difficultyLevel}</strong>`
+    levelChosen.innerHTML = `Level chosen: <strong>Level ${getDifficultyLevel()}</strong>`
 }
 
 const selectFirstMenuOption = () => {
@@ -151,8 +151,4 @@ const rendeMenuOptionContent = (menuOption, menuOptionContent) => {
     }   else {
         removeClassFromElement(menuOptionContent, 'show')
     }
-}
-
-const toggleElement = (element, className) => {
-    element.classList.toggle(className)
 }

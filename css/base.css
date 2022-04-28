@@ -24,6 +24,7 @@
     --modal-body-child-pad: 1rem;
     --menu-option-content-min-height: 224px;
     --game-level-step-width: 14px;
+    --popup-bg: #f5f5f5;
 }
 
 *, *::before, *::after {

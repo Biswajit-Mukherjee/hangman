@@ -299,7 +299,7 @@
     min-height: 2.5rem;
     box-shadow: var(--hgmn-elevation-2);
     border-radius: calc(var(--border-rad-prim)/2);
-    background-color: var(--bg-prim);
+    background-color: var(--popup-bg);
     position: fixed;
     top: 2.5%;
     left: 50%;

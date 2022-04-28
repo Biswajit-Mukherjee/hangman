@@ -15,6 +15,7 @@ const statusElement = document.querySelector('#status')
 const resetButton = document.querySelector('#reset')
 const appVersion = document.querySelector('#app-version')
 const creditSuccessPopup = document.querySelector('#credit-success-popup')
+const savingChangesPopup = document.querySelector('#saving-changes-popup')
 const saveChangesSuccessPopup = document.querySelector('#save-changes-success-popup')
 const discardButtons = document.querySelectorAll('.action--discard')
 const saveChangesButton = document.querySelector('.action--save')
@@ -30,10 +31,11 @@ const levelNumber = document.querySelector('#level-number')
 const difficultyLevelSelectDropdown = document.querySelector('#difficulty-level')
 const resetCreditsButton = document.querySelector('#reset-credits')
 
-let difficultyLevel = getDifficultyLevel()
+const popupTimeout = 3000
 const guesses = 5
 const versionNumber = '1.04.22.27'
 const version = `Version ${versionNumber}`
+let difficultyLevel = getDifficultyLevel()
 
 // Render app version
 appVersion.textContent = version
@@ -93,6 +95,7 @@ discardButtons.forEach((discardButton) => {
         })
         removeClassFromElement(overlay, 'darken')
         removeClassFromElement(overlay, 'show')
+        location.reload()
     })
 })
 
@@ -122,50 +125,42 @@ preferencesOption.addEventListener('click', () => {
     let credit = getCreditScore()
     let isCreditScoreChanged = false
     let isDifficultyLevelChanged = false
-    difficultyLevelSelectDropdown.value = getDifficultyLevel()
 
     resetCreditsButton.addEventListener('click', () => {
-        if (parseInt(credit) !== 0) {
-            // isCreditScoreChanged = credit !== getCreditScore()
-            isCreditScoreChanged = true
-        }   else {
-            isCreditScoreChanged = false
-        }
+        isCreditScoreChanged = parseInt(credit) !== 0 ? true : false
 
         if (isCreditScoreChanged) {
             credit = resetCredits()
             creditsInfoScore.textContent = `Credits: ${credit}`
         }
-
-        console.log(isCreditScoreChanged || isDifficultyLevelChanged)
     })
 
-    difficultyLevelSelectDropdown.addEventListener('change', (e) => {
-        const selectedDifficultyLevel = e.target.value
-        const savedDifficultyLevel = getDifficultyLevel()
-        isDifficultyLevelChanged = selectedDifficultyLevel !== savedDifficultyLevel
-
-        console.log('Selected value: ' + selectedDifficultyLevel)
-        console.log('Saved value: ' + savedDifficultyLevel)
-
-        if (isDifficultyLevelChanged) {
-            setDifficultyLevel(selectedDifficultyLevel)
-        }
-
-        console.log(isCreditScoreChanged || isDifficultyLevelChanged)
+    difficultyLevelSelectDropdown.addEventListener('change', () => {
+        isDifficultyLevelChanged = difficultyLevelSelectDropdown.value !== getDifficultyLevel()
     })
+
+    isDifficultyLevelChanged = difficultyLevelSelectDropdown.value !== getDifficultyLevel()
 
     if (saveChangesButton) {
         saveChangesButton.addEventListener('click', () => {
             saveCredits(credit)
+            setDifficultyLevel(difficultyLevelSelectDropdown.value)
             removeClassFromElement(preferencesModal, 'show')
             removeClassFromElement(overlay, 'darken')
             removeClassFromElement(overlay, 'show')
             if (isCreditScoreChanged || isDifficultyLevelChanged) {
-                showPopup(saveChangesSuccessPopup)
+                showPopup(savingChangesPopup)
+                setTimeout(() => {
+                    showPopup(saveChangesSuccessPopup)
+                    setTimeout(() => {
+                        location.reload()
+                        startGame(guesses, getDifficultyLevel())
+                    }, popupTimeout)
+                }, popupTimeout)
+            }   else {
+                location.reload()
+                startGame(guesses, getDifficultyLevel())
             }
-            difficultyLevel = getDifficultyLevel()
-            startGame(guesses, difficultyLevel)
         })
     }
 })
