@@ -17,7 +17,7 @@ const appVersion = document.querySelector('#app-version')
 const creditSuccessPopup = document.querySelector('#credit-success-popup')
 const saveChangesSuccessPopup = document.querySelector('#save-changes-success-popup')
 const discardButtons = document.querySelectorAll('.action--discard')
-const saveChangesButtons = document.querySelectorAll('.action--save')
+const saveChangesButton = document.querySelector('.action--save')
 const userCredits = document.querySelector('.credit-score')
 const creditsInfoScore = document.querySelector('.info__score')
 const firstOption = document.querySelector('.preference__option:first-of-type')
@@ -25,7 +25,11 @@ const profileOption = document.querySelector('.preference__option#profile')
 const settingsOption = document.querySelector('.preference__option#settings')
 const profileData = document.querySelector('#profile-data')
 const settingsData = document.querySelector('#settings-data')
-const difficultyLevel = 2
+const levelChosen = document.querySelector('.level-chosen')
+const levelNumber = document.querySelector('#level-number')
+const difficultyLevelSelectDropdown = document.querySelector('#difficulty-level')
+
+let difficultyLevel = getDifficultyLevel()
 const guesses = 5
 const versionNumber = '1.04.22.27'
 const version = `Version ${versionNumber}`
@@ -91,18 +95,6 @@ discardButtons.forEach((discardButton) => {
     })
 })
 
-saveChangesButtons.forEach((saveChangesButton) => {
-    saveChangesButton.addEventListener('click', () => {
-        const openModals = document.querySelectorAll('.modal.show')
-        openModals.forEach((modal) => {
-            removeClassFromElement(modal, 'show')
-        })
-        removeClassFromElement(overlay, 'darken')
-        removeClassFromElement(overlay, 'show')
-        showPopup(saveChangesSuccessPopup)
-    })
-})
-
 aboutAppOption.addEventListener('click', () => {
     removeClassFromElement(headerActionsMenu, 'show')
     showElement(overlay)
@@ -125,4 +117,19 @@ preferencesOption.addEventListener('click', () => {
     resetMenu()
     selectFirstMenuOption()
     renderMenu()
+
+    difficultyLevelSelectDropdown.addEventListener('change', (e) => {
+        setDifficultyLevel(e.target.value)
+    })
+
+    if (saveChangesButton) {
+        saveChangesButton.addEventListener('click', () => {
+            removeClassFromElement(preferencesModal, 'show')
+            removeClassFromElement(overlay, 'darken')
+            removeClassFromElement(overlay, 'show')
+            showPopup(saveChangesSuccessPopup)
+            difficultyLevel = getDifficultyLevel()
+            startGame(guesses, difficultyLevel)
+        })
+    }
 })

@@ -23,6 +23,7 @@
     --modal-title-width: 124px;
     --modal-body-child-pad: 1rem;
     --menu-option-content-min-height: 224px;
+    --game-level-step-width: 14px;
 }
 
 *, *::before, *::after {

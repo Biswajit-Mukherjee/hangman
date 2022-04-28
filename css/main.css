@@ -153,11 +153,11 @@
     padding: .75rem 0 0;
 }
 
-/* Credits section */
-.main .game .credits {
+/* Credits & Game level section */
+.main .game .credits,
+.main .game .game-level {
     position: absolute;
     top: 0;
-    right: 1%;
     padding: .5rem;
     color: var(--acc-bg);
     font-weight: 500;
@@ -165,8 +165,41 @@
     gap: .25rem;
 }
 
+.main .game .credits {
+    right: 1%;
+}
+
 .main .game .credits .credits__icon {
     color: #f3a657;
+}
+
+/* Game level section */
+.main .game .game-level {
+    width: fit-content;
+    left: 1%;
+}
+
+.main .game .game-level .level__steps {
+    position: relative;
+    top: 6px;
+    left: -4px;
+}
+
+.main .game .game-level .level__step {
+    position: relative;
+    display: block;
+    width: var(--game-level-step-width);
+    height: 2px;
+    background: var(--acc-bg);
+    margin: 2px 0;
+}
+
+.main .game .game-level .level__step:first-of-type {
+    left: calc(var(--game-level-step-width) / 2);
+}
+
+.main .game .game-level .level__step:last-of-type {
+    left: calc((var(--game-level-step-width) / 2) * (-1));
 }
 
 /* Footer styling */

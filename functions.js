@@ -55,6 +55,17 @@ const getPuzzleStatus = (instance) => {
     return puzzleStatus
 }
 
+const getDifficultyLevel = () => {
+    const difficultyLevel = localStorage.getItem('hangman-difficulty-level')
+    return difficultyLevel ? JSON.parse(difficultyLevel) : 1
+}
+
+const setDifficultyLevel = (level) => {
+    if (level) {
+        localStorage.setItem('hangman-difficulty-level', JSON.stringify(level))
+    }
+}
+
 const renderGame = (instance) => {
     gameCredits.textContent = getCreditScore()
     gameTitle.textContent = getGameTitle(instance)
@@ -62,6 +73,8 @@ const renderGame = (instance) => {
     statusElement.innerHTML = getPuzzleStatus(instance)
     userCredits.textContent = `You have ${getCreditScore()} coins in your credit`
     creditsInfoScore.textContent = `Credits: ${getCreditScore()}`
+    levelChosen.innerHTML = `Level chosen: <strong>Level ${difficultyLevel}</strong>`
+    levelNumber.textContent = difficultyLevel
 }
 
 const startGame = (guesses, difficultyLevel) => {

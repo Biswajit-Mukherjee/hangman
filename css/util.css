@@ -256,7 +256,7 @@
     border-radius: 0;
 }
 
-.preference .preference__content .content__data .wrapper .diff-levels {
+.preference .preference__content .content__data .wrapper .levels-info .diff-levels {
     font: inherit;
     font-size: 96%;
     padding: .25rem 1.5rem;

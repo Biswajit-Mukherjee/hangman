@@ -54,6 +54,16 @@
         </section>
 
         <section class="game flex--y">
+            <!-- Level summary -->
+            <div class="game-level flex--x" title="Game level">
+                <div class="level__number" id="level-number"></div>
+                <div class="level__steps">
+                    <span class="level__step"></span>
+                    <span class="level__step"></span>
+                    <span class="level__step"></span>
+                </div>
+            </div>
+
             <div class="container flex--y">
                 <!-- Game title text -->
                 <h3 class="game__title" id="game-title"></h3>
@@ -73,6 +83,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="credits flex--x" title="Credit score">
                 <div class="credits__icon"><i class="fa-solid fa-coins"></i></div>
                 <!-- Game credit score -->
@@ -197,6 +208,7 @@
                                         </div>
                                         <div class="levels">
                                             <div class="title accent--bold">Levels summary</div>
+                                            <div class="level-chosen"></div>
                                             <div class="levels-info">
                                                 <label for="difficulty-level">
                                                     Choose difficulty level
