@@ -125,7 +125,13 @@ preferencesOption.addEventListener('click', () => {
     difficultyLevelSelectDropdown.value = getDifficultyLevel()
 
     resetCreditsButton.addEventListener('click', () => {
-        isCreditScoreChanged = credit !== getCreditScore()
+        if (parseInt(credit) !== 0) {
+            // isCreditScoreChanged = credit !== getCreditScore()
+            isCreditScoreChanged = true
+        }   else {
+            isCreditScoreChanged = false
+        }
+
         if (isCreditScoreChanged) {
             credit = resetCredits()
             creditsInfoScore.textContent = `Credits: ${credit}`
