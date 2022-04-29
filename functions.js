@@ -148,7 +148,7 @@ const renderMenu = () => {
     rendeMenuOptionContent(settingsOption, settingsData)
     userCredits.textContent = `You have ${getCreditScore()} coins in your credit`
     creditsInfoScore.textContent = `Credits: ${getCreditScore()}`
-    levelChosen.innerHTML = `Level chosen: <strong>Level ${getDifficultyLevel()}</strong>`
+    levelChosen.innerHTML = `Current level: <strong>Level ${getDifficultyLevel()}</strong>`
 }
 
 const selectFirstMenuOption = () => {
