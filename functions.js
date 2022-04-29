@@ -73,11 +73,28 @@ const setDifficultyLevel = (level) => {
     }
 }
 
+const generatePuzzleLetterDOM = (puzzleElement, puzzleLetter) => {
+    const letterElement = document.createElement('span')
+    letterElement.classList.add('puzzle-letter')
+    if (puzzleLetter !== ' ') {
+        letterElement.classList.add('border-bottom')
+    }
+    letterElement.textContent = puzzleLetter
+    puzzleElement.appendChild(letterElement)
+}
+
+const renderPuzzleElement = (puzzle) => {
+    puzzleElement.innerHTML = ''
+    puzzle.split('').forEach((letter) => {
+        generatePuzzleLetterDOM(puzzleElement, letter)
+    })
+}
+
 const renderGame = (instance) => {
     levelNumber.textContent = getDifficultyLevel()
     gameCredits.textContent = getCreditScore()
     gameTitle.textContent = getGameTitle(instance)
-    puzzleElement.textContent = getPuzzle(instance)
+    renderPuzzleElement(getPuzzle(instance))
     statusElement.innerHTML = getPuzzleStatus(instance)
 }
 

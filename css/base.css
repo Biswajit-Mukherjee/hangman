@@ -2,6 +2,7 @@
     --ff-prim: 'Noto Sans', sans-serif;
     --ff-acc: 'Inter', sans-serif;
     --ff-puzzle: 'Source Code Pro', monospace;
+    --ff-puzzle: Helvetica, Arial, sans-serif;
     --logo-size: 2.5rem;
     --bg-prim: #fff;
     --bg-sec: hsl(205, 87%, 95%);
@@ -16,7 +17,8 @@
     --cta-bg: hsl(205, 87%, 40%);
     /* --success: #00ff87; */
     --success: hsl(155, 100%, 35%);
-    --game-max-width: 640px;
+    --game-min-width: 640px;
+    --game-max-width: fit-content;
     --game-min-height: 264px;
     --about-modal-max-width: 680px;
     --about-modal-min-height: 240px;

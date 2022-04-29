@@ -104,6 +104,7 @@
 /* Game section styling */
 .main .game {
     width: 94%;
+    min-width: calc(min(94%, var(--game-min-width)));
     max-width: var(--game-max-width);
     min-height: var(--game-min-height);
     margin: auto;
@@ -147,6 +148,20 @@
 .main .game .container .game__content .puzzle-wrapper .content__word {
     font-family: var(--ff-puzzle);
     font-size: 1.5rem;
+}
+
+.main .game .container .game__content .puzzle-wrapper .content__word .puzzle-letter {
+    display: inline-block;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    margin: 0 .1rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 2.4rem;
+}
+
+.main .game .container .game__content .puzzle-wrapper .content__word .puzzle-letter.border-bottom {
+    border-bottom: 2px solid var(--acc-bg);
 }
 
 .main .game .container .game__content .puzzle-wrapper .content__status {
