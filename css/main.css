@@ -205,7 +205,7 @@
     display: block;
     width: var(--game-level-step-width);
     height: 2px;
-    background-color: black;
+    background-color: var(--cta-bg);
     margin: 2px 0;
 }
 
