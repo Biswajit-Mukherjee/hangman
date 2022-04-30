@@ -1,9 +1,9 @@
 :root {
     --ff-prim: 'Noto Sans', sans-serif;
     --ff-acc: 'Inter', sans-serif;
-    --ff-puzzle: 'Source Code Pro', monospace;
-    --ff-puzzle: Helvetica, Arial, sans-serif;
+    --ff-puzzle: var(--ff-acc);
     --logo-size: 2.5rem;
+    --puzzle-letter-size: 1.5rem;
     --bg-prim: #fff;
     --bg-sec: hsl(205, 87%, 95%);
     --txt-prim: #1b1b1b;

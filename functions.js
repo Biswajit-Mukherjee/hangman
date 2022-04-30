@@ -73,13 +73,19 @@ const setDifficultyLevel = (level) => {
     }
 }
 
+const renderPuzzleLetterBottomBorder = (puzzleLetter, letterElement) => {
+    if (puzzleLetter !== '*') {
+        removeClassFromElement(letterElement, 'border-bottom')
+    }   else {
+        addClassToElement(letterElement, 'border-bottom')
+    }
+}
+
 const generatePuzzleLetterDOM = (puzzleElement, puzzleLetter) => {
     const letterElement = document.createElement('span')
-    letterElement.classList.add('puzzle-letter')
-    if (puzzleLetter !== ' ') {
-        letterElement.classList.add('border-bottom')
-    }
+    addClassToElement(letterElement, 'puzzle-letter')
     letterElement.textContent = puzzleLetter
+    renderPuzzleLetterBottomBorder(puzzleLetter, letterElement)
     puzzleElement.appendChild(letterElement)
 }
 
@@ -146,7 +152,8 @@ const selectMenuOption = (menuOption, className) => {
 const renderMenu = () => {
     rendeMenuOptionContent(profileOption, profileData)
     rendeMenuOptionContent(settingsOption, settingsData)
-    userCredits.textContent = `You have ${getCreditScore()} coins in your credit`
+    const plural = getCreditScore() === 1 ? '' : 's'
+    userCredits.textContent = `You have ${getCreditScore()} coin${plural} in your credit`
     creditsInfoScore.textContent = `Credits: ${getCreditScore()}`
     levelChosen.innerHTML = `Current level: <strong>Level ${getDifficultyLevel()}</strong>`
 }

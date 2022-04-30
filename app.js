@@ -38,7 +38,7 @@ const guesses = 5
 const versionNumber = 1
 const monthNumber = 4
 const year = 22
-const dayOfMonth = 29
+const dayOfMonth = 30
 const version = `Version ${versionNumber}.${monthNumber}.${year}.${dayOfMonth}`
 let difficultyLevel = getDifficultyLevel()
 

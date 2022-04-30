@@ -378,7 +378,7 @@
 .accent--bold {
     font-family: var(--ff-acc);
     font-weight: 700;
-    letter-spacing: -.8px;
+    letter-spacing: -1px;
     color: var(--acc-bg);
 }
 

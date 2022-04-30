@@ -3,7 +3,7 @@
 .footer {
     background-color: var(--bg-prim);
     padding: 1.25rem;
-    min-height: 5rem;
+    height: 4.5rem;
 }
 
 .header {
@@ -148,20 +148,22 @@
 .main .game .container .game__content .puzzle-wrapper .content__word {
     font-family: var(--ff-puzzle);
     font-size: 1.5rem;
+    padding: .75rem .25rem;
+    flex-wrap: wrap;
 }
 
 .main .game .container .game__content .puzzle-wrapper .content__word .puzzle-letter {
     display: inline-block;
-    height: 2.4rem;
-    line-height: 2.4rem;
-    margin: 0 .1rem;
+    height: var(--puzzle-letter-size);
+    line-height: var(--puzzle-letter-size);
+    margin: 0 .15rem;
     text-align: center;
     text-transform: uppercase;
-    width: 2.4rem;
+    width: var(--puzzle-letter-size);
 }
 
 .main .game .container .game__content .puzzle-wrapper .content__word .puzzle-letter.border-bottom {
-    border-bottom: 2px solid var(--acc-bg);
+    border-bottom: 2px solid var(--cta-bg);
 }
 
 .main .game .container .game__content .puzzle-wrapper .content__status {
