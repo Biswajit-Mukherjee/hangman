@@ -165,7 +165,6 @@
 }
 
 .main .game .container .game__content .puzzle-wrapper .content__word .puzzle-letter.starred {
-    font-family: 'Source Code Pro', monospace;
     border-bottom: 2px solid var(--cta-bg);
 }
 
