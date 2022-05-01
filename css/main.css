@@ -153,16 +153,19 @@
 }
 
 .main .game .container .game__content .puzzle-wrapper .content__word .puzzle-letter {
+    font-family: inherit;
     display: inline-block;
     height: var(--puzzle-letter-size);
     line-height: var(--puzzle-letter-size);
     margin: 0 .15rem;
+    padding-bottom: .3rem;
     text-align: center;
     text-transform: uppercase;
     width: var(--puzzle-letter-size);
 }
 
-.main .game .container .game__content .puzzle-wrapper .content__word .puzzle-letter.border-bottom {
+.main .game .container .game__content .puzzle-wrapper .content__word .puzzle-letter.starred {
+    font-family: 'Source Code Pro', monospace;
     border-bottom: 2px solid var(--cta-bg);
 }
 

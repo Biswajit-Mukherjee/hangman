@@ -75,9 +75,9 @@ const setDifficultyLevel = (level) => {
 
 const renderPuzzleLetterBottomBorder = (puzzleLetter, letterElement) => {
     if (puzzleLetter !== '*') {
-        removeClassFromElement(letterElement, 'border-bottom')
+        removeClassFromElement(letterElement, 'starred')
     }   else {
-        addClassToElement(letterElement, 'border-bottom')
+        addClassToElement(letterElement, 'starred')
     }
 }
 
